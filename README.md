@@ -44,7 +44,7 @@ AI-агент для подготовки материалов аудиторс�
 **Наблюдаемые артефакты:**
 - `memory/sessions/session_<uuid>.json` — состояние сессии (план, трасса, роль);
 - `memory/global_memory.jsonl` — дополняется после reflection;
-- панели `ai_BP_helper` / `Ответ` в терминале на каждом шаге агента.
+- панели `ai_audit_helper` / `Ответ` в терминале на каждом шаге агента.
 
 ## 3. Quick Start
 
@@ -52,8 +52,8 @@ AI-агент для подготовки материалов аудиторс�
 
 ```bash
 # 1. Клонировать
-git clone <repo_url> ai_BP_helper
-cd ai_BP_helper
+git clone <repo_url> ai_audit_helper
+cd ai_audit_helper
 
 # 2. Виртуальное окружение
 python -m venv .venv
@@ -120,7 +120,7 @@ rich>=13.0.0,<15.0              # панели и подсветка
 ## 5. Структура репозитория
 
 ```
-ai_BP_helper/
+ai_audit_helper/
 ├── README.md                     этот файл
 ├── .env.example                  шаблон переменных окружения
 ├── .gitignore                    исключает .env, .venv, memory/sessions/*
@@ -280,15 +280,3 @@ python check_imports.py
 Скрипт различает критичные модули (agent loop, реестр, локальные тулы) и
 опциональные (API-обёртка, mock-HDFS). При отсутствии `JPY_API_TOKEN`
 критичные модули всё равно импортируются.
-
-## 11. Стандарты, на которые опирается оформление
-
-- IBM Cloud: Repository Guidelines
-- Papers with Code: Releasing Research Code
-- GitHub Open Source Guide: Starting an Open Source Project
-- Cookiecutter Data Science: структура аналитического проекта
-- Standard Readme: спецификация README
-
-*Документ сформирован: 22 ноября 2026 г. для передачи проекта комиссии
-при защите диплома.*
-```
