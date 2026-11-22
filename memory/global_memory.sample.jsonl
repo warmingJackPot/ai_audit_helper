@@ -1,0 +1,9 @@
+[{"ts": "2026-01-22T21:48:22Z", "session_id": "demo-001", "key": "project_alpha_start", "value": "Проект «Альфа» стартовал 01-07-2025, ответственный - Иванов И.И., директор направления генеративного ИИ.", "source": "domain_fact"}
+{"ts": "2026-01-22T21:52:26Z", "session_id": "demo-001", "key": "employee_goals_2025", "value": "Получены цели Иванова И.И. за 2025 г., включая метрики DAU, MAU и удержание аудитории.", "source": "domain_fact"}
+{"ts": "2026-01-22T23:13:36Z", "session_id": "demo-002", "key": "projects_table_ref", "value": "Таблица проектов Петрова П.П. выгружена в results/projects_petrov.csv и доступна для анализа.", "source": "artifact_ref"}
+{"ts": "2026-01-22T23:13:37Z", "session_id": "demo-002", "key": "goals_table_ref", "value": "Таблица целей Петрова П.П. выгружена в results/goals_petrov.csv и доступна для анализа.", "source": "artifact_ref"}
+{"ts": "2026-01-22T23:37:23Z", "session_id": "demo-003", "key": "projects_goals_petrov", "value": "Выгружены проекты и цели сотрудника Петрова Петра Петровича за период 2022-2026 гг.", "source": "artifact_ref"}
+{"ts": "2026-01-22T23:50:26Z", "session_id": "demo-003", "key": "project_alpha_lead", "value": "Проект «Альфа» возглавляет Иванов Иван Иванович, директор направления.", "source": "domain_fact"}
+{"ts": "2026-01-22T23:54:58Z", "session_id": "demo-004", "key": "reporting_style_pref", "value": "Пользователь предпочитает актовый стиль: сначала краткая сводка, затем детали и ссылки на артефакты.", "source": "user_pref"}
+{"ts": "2026-01-23T00:05:10Z", "session_id": "demo-004", "key": "cluster_access_limit", "value": "В демо-версии кластерные инструменты big_projects_data и goals_replica недоступны; возвращают placeholder.", "source": "env_limit"}
+{"ts": "2026-01-23T00:12:44Z", "session_id": "demo-004", "key": "hcm_data_scope", "value": "Данные HCM содержат ФИО, табельный номер, проект, статус, год и цели сотрудников; используются только для аудита.", "source": "domain_fact"}]
