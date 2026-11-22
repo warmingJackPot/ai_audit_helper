@@ -1,0 +1,12 @@
+
+# LLM-обёртка
+langchain-core>=0.1.0,<0.4
+# Если используется langchain.
+langchain>=0.1.0,<0.3
+
+# HTTP-клиент для GigaChat API (liveaccess/v1/gc/chat/completions)
+requests>=2.28.0,<3.0
+
+# CLI
+prompt_toolkit>=3.0.43,<4.0
+rich>=13.0.0,<15.0

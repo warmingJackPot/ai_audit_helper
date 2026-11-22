@@ -1,0 +1,34 @@
+[{
+  "tools": {
+    "cur_datetime": {
+      "name": "cur_datetime",
+      "host": "vm1",
+      "type": "python_fn",
+      "entrypoint": "time_tool:cur_datetime",
+      "args": [],
+      "description": "Показывает текущую дату и время"
+    },
+    "calculate_numbers": {
+      "name": "calculate_numbers",
+      "host": "vm1",
+      "type": "python_fn",
+      "entrypoint": "math_tools:calculate_numbers",
+      "args": ["a", "b", "operation"],
+      "description": "Выполняет арифметическую операцию (sum, difference, multiply, divide) над двумя числами"
+    },
+    "big_projects_data": {
+      "name": "big_projects_data",
+      "host": "cluster",
+      "type": "pyspark",
+      "args": ["fio", "tab_num", "project_name", "status", "year"],
+      "description": "Выгрузка данных по крупным проектам из реплики данных с фильтрацией по ФИО, табельному номеру, названию проекта и статусу"
+    },
+    "goals_replica": {
+      "name": "goals_replica",
+      "host": "cluster",
+      "type": "pyspark",
+      "args": ["surname", "firstname", "year", "keywords"],
+      "description": "Выгрузка целей из реплики данных с фильтрацией по фамилиям, именам, годам и ключевым словам"
+    }
+  }
+}]
