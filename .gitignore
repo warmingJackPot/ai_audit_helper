@@ -1,0 +1,63 @@
+# --- Секреты и переменные окружения ---
+# Реальный .env с токеном GigaChat НЕ коммитится. В репозитории - только .env.example
+.env
+.env.*
+!.env.example
+
+# --- Виртуальные окружения ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+.installed.cfg
+
+# --- Тесты и линтеры ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- Память агента ---
+# Рабочий файл дополняется при каждом запуске агента - в репозитории только sample
+memory/global_memory.jsonl
+memory/sessions/
+!memory/global_memory.sample.jsonl
+
+# --- Логи и временные файлы ---
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# --- ОС и IDE ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Артефакты HDFS-очереди (полная версия) ---
+# В демо не создаются, но на всякий случай
+skillhub_proxy_folder/
+*.results
+*.statuses
