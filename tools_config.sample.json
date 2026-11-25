@@ -4,7 +4,7 @@
       "name": "cur_datetime",
       "host": "vm1",
       "type": "python_fn",
-      "entrypoint": "time_tool:cur_datetime",
+      "entrypoint": "audit_helper.tools.time_tool:cur_datetime",
       "args": [],
       "description": "Показывает текущую дату и время"
     },
@@ -12,7 +12,7 @@
       "name": "calculate_numbers",
       "host": "vm1",
       "type": "python_fn",
-      "entrypoint": "math_tools:calculate_numbers",
+      "entrypoint": "audit_helper.tools.math_tools:calculate_numbers",
       "args": ["a", "b", "operation"],
       "description": "Выполняет арифметическую операцию (sum, difference, multiply, divide) над двумя числами"
     },

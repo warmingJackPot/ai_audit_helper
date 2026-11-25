@@ -1,7 +1,7 @@
 """cli_w"""
 from rich.console import Console
 from rich.panel import Panel
-import cli_skillhub_v02
+from audit_helper import cli_skillhub_v02
 
 import warnings
 # warnings.filterwarnings("ignore", category=DeprecationWarning, module="langchain")

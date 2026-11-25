@@ -6,13 +6,13 @@ import time
 import uuid
 from typing import Any, Dict, List, Optional, Tuple
 
-from gc_call_oaitsh import init_agent
-from vm1_mcp_logger_client import submit_job
-from vm1_local_worker import vm1_worker
+from audit_helper.gc_call_oaitsh import init_agent
+from audit_helper.vm1_mcp_logger_client import submit_job
+from audit_helper.vm1_local_worker import vm1_worker
 from langchain.memory import ConversationBufferMemory
 
-from multi_tool_handler import multi_tool_handler
-from utils import log_print
+from audit_helper.multi_tool_handler import multi_tool_handler
+from audit_helper.utils import log_print
 
 from rich.console import Console
 from rich.panel import Panel
@@ -485,7 +485,7 @@ def main():
             if manual:
                 method, params = manual
                 print(f"[CLI] Отправляю job {method} с params {params}")
-                submit_job(method, params)
+                print(submit_job(method, params))
                 continue
 
             # показать инструменты

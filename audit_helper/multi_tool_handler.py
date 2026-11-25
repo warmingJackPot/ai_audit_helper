@@ -2,7 +2,7 @@
 import json
 import re
 from typing import List, Dict, Any
-from vm1_mcp_logger_client import submit_job
+from audit_helper.vm1_mcp_logger_client import submit_job
 # from vm1_fast_worker import vm1_fast_worker  # Если используете быстрый воркер
 
 

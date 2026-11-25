@@ -5,7 +5,7 @@ import requests
 from langchain.llms.base import LLM
 from langchain_core.callbacks.manager import CallbackManagerForLLMRun
 from typing import Any, List, Optional, Dict
-import tools_utils
+from audit_helper import tools_utils
 
 
 class CustomLLM(LLM):

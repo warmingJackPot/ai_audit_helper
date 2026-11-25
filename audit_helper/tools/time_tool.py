@@ -1,6 +1,6 @@
 """time_tool"""
 import datetime
-from mcp_registry import mcp
+from audit_helper.mcp_registry import mcp
 
 
 @mcp.tool(name="cur_datetime", host="vm1", type="python_fn", description="Показывает текущую дату и время")

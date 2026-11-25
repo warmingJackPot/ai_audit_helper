@@ -1,5 +1,5 @@
 """math_tools"""
-from mcp_registry import mcp
+from audit_helper.mcp_registry import mcp
 
 # @mcp.tool(name="add_numbers",
 #           host="vm1",

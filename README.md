@@ -121,33 +121,31 @@ rich>=13.0.0,<15.0              # панели и подсветка
 
 ```
 ai_audit_helper/
-├── README.md                     этот файл
-├── .env.example                  шаблон переменных окружения
-├── .gitignore                    исключает .env, .venv, memory/sessions/*
-├── requirements.txt              зависимости
-│
-├── cli_w.py                      точка входа (баннер + запуск)
-├── cli_skillhub_v02.py           Agent Loop, промпты, память
-├── gc_call_oaitsh.py             GigaChat API wrapper (LangChain LLM)
-├── multi_tool_handler.py         парсинг JSON из LLM + orchestration
-├── mcp_registry.py               декоратор @mcp.tool (реестр тулов)
-├── utils.py                      log_print и вспомогательные функции
-├── check_imports.py              smoke-test импортов
-│
-├── tools/                        локальные инструменты VM1
-│   ├── math_tools.py             calculate_numbers
-│   └── time_tool.py              cur_datetime
-│
-├── memory/
-│   ├── sessions/                 сессионное состояние (gitignored, создаётся автоматически)
-│   └── global_memory.sample.jsonl   образец долгосрочной памяти
-│
-├── tools_config.sample.json      шаблон реестра инструментов
-│
-├── hdfs_utils.py                 MOCK: no-op HDFS-операции
-├── tools_utils.py                MOCK: читает tools_config.sample.json
-├── vm1_mcp_logger_client.py      MOCK: локальный submit_job / placeholder
-└── vm1_local_worker.py           MOCK: не запускается
+├── cli_w.py                        точка входа (баннер + запуск)
+├── audit_helper/
+│   ├── __init__.py
+│   ├── cli_skillhub_v02.py           Agent Loop, промпты, память
+│   ├── gc_call_oaitsh.py             GigaChat API wrapper (LangChain LLM)
+│   ├── hdfs_utils.py                 MOCK: no-op HDFS-операции
+│   ├── mcp_registry.py               декоратор @mcp.tool (реестр тулов)
+│   ├── multi_tool_handler.py         парсинг JSON из LLM + orchestration
+│   ├── tools_utils.py                MOCK: читает tools_config.sample.json
+│   ├── utils.py                      log_print и вспомогательные функции
+│   ├── vm1_local_worker.py           MOCK: не запускается
+│   ├── vm1_mcp_logger_client.py      MOCK: локальный submit_job / placeholder
+│   └── tools/                       локальные инструменты VM1
+│       ├── __init__.py
+│       ├── math_tools.py             calculate_numbers
+│       └── time_tool.py              cur_datetime
+├── scripts/
+│   ├── __init__.py
+│   └── check_imports.py              smoke-test импортов
+├── memory/                          сессионное состояние и образец долгосрочной памяти
+├── tools_config.sample.json         шаблон реестра инструментов
+├── requirements.txt                 зависимости
+├── README.md                        этот файл
+├── .env.example                     шаблон переменных окружения
+└── .gitignore                       исключает .env, .venv, memory/sessions/*
 ```
 
 ### Что реально включено, а что — mock
@@ -186,7 +184,7 @@ ai_audit_helper/
 | Шаг | Действие | Ожидаемый результат |
 |-----|----------|---------------------|
 | **1. Понять задачу** | Прочитать  пп.1–2 этого README | Ясно, что делает агент и что вы увидите |
-| **2. Проверить окружение** | `python check_imports.py` | Все критичные модули — `OK`; mock — `WARN` |
+| **2. Проверить окружение** | `python -m scripts.check_imports` | Все критичные модули — `OK`; mock — `WARN` |
 | **3. Запустить CLI** | `python cli_w.py` → `list_tools` | Список из 4 инструментов |
 | **4. Выполнить тул** | `run cur_datetime` | JSON с текущим временем |
 | **5. Проверить память** | Открыть `memory/sessions/session_*.json` | План, роль |
@@ -274,7 +272,7 @@ text_response
 ### Проверка основного сценария
 
 ```bash
-python check_imports.py
+python -m scripts.check_imports
 ```
 
 Скрипт различает критичные модули (agent loop, реестр, локальные тулы) и

@@ -2,7 +2,7 @@
 import json
 import socket
 from functools import wraps
-from hdfs_utils import hdfs_read, hdfs_write, hdfs_exists
+from audit_helper.hdfs_utils import hdfs_read, hdfs_write, hdfs_exists
 import os
 
 HDFS_FOLDER = f"hdfs://arnsdpsbx/user/{os.environ.get('NB_USER', 'demo_user')}/notebooks/skillhub_proxy_folder"

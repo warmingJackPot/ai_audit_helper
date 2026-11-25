@@ -4,12 +4,9 @@
 В демо-версии выполняет инструменты локально и возвращает заглушённые результаты.
 """
 import json
-import time
-import os
 import importlib
-import sys
 
-from tools_utils import load_tools_config
+from audit_helper.tools_utils import load_tools_config
 
 
 def submit_job(method: str, params: dict, timeout: int = 1200) -> str:
@@ -28,20 +25,8 @@ def submit_job(method: str, params: dict, timeout: int = 1200) -> str:
         entrypoint = tool_config.get("entrypoint")
         if entrypoint and ":" in entrypoint:
             try:
-                module_name, func_name = entrypoint.split(":")
-                # Импортируем модуль
-                if module_name not in sys.modules:
-                    # Пробуем импортировать из папки tools
-                    import importlib.util
-                    tools_dir = os.path.join(os.path.dirname(__file__), "tools")
-                    module_path = os.path.join(tools_dir, f"{module_name}.py")
-                    if os.path.exists(module_path):
-                        spec = importlib.util.spec_from_file_location(module_name, module_path)
-                        module = importlib.util.module_from_spec(spec)
-                        spec.loader.exec_module(module)
-                    else:
-                        module = importlib.import_module(module_name)
-
+                module_name, func_name = entrypoint.split(":", 1)
+                module = importlib.import_module(module_name)
                 func = getattr(module, func_name)
                 result = func(**params)
                 print(f"[DEMO] Инструмент {method} выполнен локально")

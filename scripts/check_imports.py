@@ -1,18 +1,19 @@
 # Check imports demo version
 import sys
-import os
+
 
 mods = [
-    "hdfs_utils",
-    "tools_utils",
-    "vm1_mcp_logger_client",
-    "vm1_local_worker",
-    "mcp_registry",
-    "multi_tool_handler",
-    "utils",
-    "gc_call_oaitsh",
-    "tools.math_tools",
-    "tools.time_tool",
+    "audit_helper.cli_skillhub_v02",
+    "audit_helper.hdfs_utils",
+    "audit_helper.tools_utils",
+    "audit_helper.vm1_mcp_logger_client",
+    "audit_helper.vm1_local_worker",
+    "audit_helper.mcp_registry",
+    "audit_helper.multi_tool_handler",
+    "audit_helper.utils",
+    "audit_helper.gc_call_oaitsh",
+    "audit_helper.tools.math_tools",
+    "audit_helper.tools.time_tool",
 ]
 
 print("=" * 60)

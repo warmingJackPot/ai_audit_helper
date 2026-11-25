@@ -6,7 +6,7 @@
 import time
 from threading import Thread
 from typing import Dict, Any, List
-from utils import log_print
+from audit_helper.utils import log_print
 
 
 class VM1LocalWorker:
